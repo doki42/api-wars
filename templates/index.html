@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+{% block content %}
+       <h1 class="h1">Star Wars universe planets</h1>
+<div name="buttons">
+<button type="button" class="btn btn-primary btn-lg" id="previous" data-url="">Previous</button>
+<button type="button" class="btn btn-primary btn-lg" id="next" data-url="">Next</button>
+</div>
+    <div class="table-responsive">
+<table class="table table-bordered">
+    <thead class="table-light">
+    <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Diameter</th>
+        <th scope="col">Climate</th>
+        <th scope="col">Terrain</th>
+        <th scope="col">Surface Water Percentage</th>
+        <th scope="col">Population</th>
+        <th scope="col">Residents</th>
+        <th scope="col"></th>
+    </tr>
+    </thead>
+    <tbody id="table-body">
+    <tr></tr>
+    </tbody>
+</table>
+</div>
+
+{% endblock %}

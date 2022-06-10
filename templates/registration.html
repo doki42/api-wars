@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+{% block content %}
+    <main class="main text-center">
+    <form action="/registration" class="form-signin" method="post" novalidate id="reg-form">
+        <div class="mb-3 text-start">
+        <h2>Welcome to the galaxy not so far away!</h2>
+        <p>Please fill up the form: </p>
+        </div>
+        <div class="mb-3 row">
+        <label for="username_input">Username</label><br>
+            <div class="col-sm-10">
+            <input id="username_input" class="form-control" type="text" name="username" required>
+            </div>
+        </div>
+        <div class="mb-3 row">
+            <label for="password_input">Password</label>
+            <div class="col-sm-10">
+            <input id="password_input" class="form-control" type="password" name="password" required>
+            </div>
+        </div>
+        <button type="submit">Register</button><br>
+    </form>
+    </main>
+    {% if already_registered_user %}
+        <p id="warning_registered_user">Username is already registered in the system!</p>
+    {% endif %}
+    <script src="../static/form.js" defer></script>
+{% endblock %}

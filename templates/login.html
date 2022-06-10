@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% block content %}
+    <main class="main text-center">
+    <form action="/login" class="form-signin" method="post" novalidate>
+        <h2 class="h2 mb-2 fw-normal">We are happy to see you again!</h2>
+        <h3 class="h3 mb-3 fw-normal">Please log in</h3>
+        <div class="form-floating">
+        <label for="username_input" class="form-control">Username</label>
+            <div class="col-sm-10">
+            <input id="username_input" class="form-control" type="text" name="username" required>
+            </div>
+        </div>
+        <div class="form-floating">
+            <label for="password_input" class="form-control">Password</label>
+            <div class="col-sm-10">
+            <input id="password_input" class="form-control" type="password" name="password" required>
+            </div>
+        </div>
+            <button type="submit">Login</button><br>
+    </form>
+    </main>
+    {% if unsuccessful_authentication %}
+        <p class="invalid_login_attempt">Invalid login attempt!</p>
+        <a href="/registration">Register</a>
+    {% endif %}
+    <script src="../static/form.js" defer></script>
+{% endblock %}
